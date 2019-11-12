@@ -145,7 +145,7 @@ int main(int argc, char *argv[])
 					f_out << idle << endl;
 				else
 				{
-					f_out << "0" << endl;
+					//f_out << "0" << endl;
 					negative_idle_time++;
 				}
 
