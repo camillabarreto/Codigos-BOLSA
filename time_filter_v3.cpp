@@ -108,7 +108,6 @@ int main(int argc, char *argv[])
 		pos = line.find("Duration");
 		if (pos < line.length())
 		{
-			cout << "line : " << line << endl;
 			pos = pos + 10;
 			pos0 = line.find("µs");
 			string nav = line.substr(pos, pos0 - pos);
@@ -145,10 +144,14 @@ int main(int argc, char *argv[])
 				if (idle >= 0)
 					f_out << idle << endl;
 				else
+				{
+					f_out << "0" << endl;
 					negative_idle_time++;
+				}
+
 				//f_out << "frame_length : " << f0.frame_length << "	|---------|    ";
 				//f_out << "idle : " << idle << endl;
-				cout << "idle : " << idle << endl;
+				//cout << "idle : " << idle << endl;
 			}
 		}
 
@@ -167,13 +170,13 @@ int main(int argc, char *argv[])
 	cout << "frame_time_t 	  : " << frame_time_t << " s" << endl;
 	cout << "preamble_t 	  : " << preamble_t << " s" << endl;
 	cout << "nav_t 		  : " << nav_t << " s" << endl;
-	cout << "radiotap_capture  : " << radiotap_capture << " frames" << endl;
-	cout << "idle time	  : " << idle_time << " s" << endl;
+	//cout << "radiotap_capture  : " << radiotap_capture << " frames" << endl;
+	cout << "idle_time	  : " << idle_time << " s" << endl;
+	cout << "negative_idle_time : " << negative_idle_time << endl;
 	cout << "\n----------------------------------\n"
 		 << endl;
 
 	cout << "tamanho da lista: " << frame_list.size() << endl;
-	cout << "negative_idle_time : " << negative_idle_time << endl;
 
 	return 0;
 }
