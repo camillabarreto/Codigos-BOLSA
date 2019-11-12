@@ -137,7 +137,7 @@ int main(int argc, char *argv[])
 
 	f_in.close();
 
-	double idle_time = time_delta_t - frame_time_t - preamble_t - nav_t;
+	double idle_time = time_delta_t - frame_time_t - preamble_t;
 
 	cout
 		<< "\n----------------------------------\n"
